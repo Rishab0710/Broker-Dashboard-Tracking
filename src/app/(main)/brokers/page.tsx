@@ -1458,6 +1458,7 @@ export default function BrokerTrackingPage() {
             <div className="p-4 sm:p-6 border-b flex justify-between items-center">
                 <h1 className="text-lg font-semibold flex items-center gap-2">
                   <Image src="https://firstrateaugmentedintelligence.com/document-tracking/deloitte.svg" alt="Deloitte Logo" width={96} height={20} />
+                  Dashboard - Document Tracking
                 </h1>
                 <div className="flex items-center gap-2">
                     <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
