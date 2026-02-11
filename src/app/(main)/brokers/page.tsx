@@ -1457,8 +1457,8 @@ export default function BrokerTrackingPage() {
         <main className="flex-1 overflow-y-auto">
             <div className="p-4 sm:p-6 border-b flex justify-between items-center">
                 <h1 className="text-lg font-semibold flex items-center gap-2">
-                  <Image src="https://firstrateaugmentedintelligence.com/document-tracking/deloitte.svg" alt="Deloitte Logo" width={96} height={20} />
-                  Dashboard - Document Tracking
+                  <Image src="https://cumberlandtrust.com/wp-content/uploads/2021/09/Cut_Logo_Final.svg" alt="Cumberland Trust Logo" width={140} height={20} />
+                  <span className="border-l pl-2 ml-2 text-muted-foreground">Dashboard - Document Tracking</span>
                 </h1>
                 <div className="flex items-center gap-2">
                     <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>

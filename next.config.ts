@@ -33,6 +33,12 @@ const nextConfig: NextConfig = {
         hostname: 'firstrateaugmentedintelligence.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cumberlandtrust.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
