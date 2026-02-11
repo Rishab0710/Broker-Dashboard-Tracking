@@ -1,12 +1,12 @@
 
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import {
   AlertCircle,
   Archive,
   ArrowRight,
   BadgeCheck,
-  Briefcase,
   Calendar,
   CheckCircle2,
   ChevronDown,
@@ -1456,7 +1456,9 @@ export default function BrokerTrackingPage() {
       <div className="flex min-h-screen flex-col bg-background">
         <main className="flex-1 overflow-y-auto">
             <div className="p-4 sm:p-6 border-b flex justify-between items-center">
-                <h1 className="text-lg font-semibold flex items-center gap-2"><Briefcase className="h-5 w-5" /> Dashboard - Document Tracking</h1>
+                <h1 className="text-lg font-semibold flex items-center gap-2">
+                  <Image src="https://firstrateaugmentedintelligence.com/document-tracking/deloitte.svg" alt="Deloitte Logo" width={96} height={20} />
+                </h1>
                 <div className="flex items-center gap-2">
                     <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
                         <SelectTrigger className="h-9 w-[150px] text-xs"><SelectValue /></SelectTrigger>
