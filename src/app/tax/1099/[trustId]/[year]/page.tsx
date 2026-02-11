@@ -448,24 +448,11 @@ const RightPaneSkeleton = () => (
 )
 
 type WorkbenchPageProps = {
-  params: Promise<{ trustId: string; year: string }>;
+  params: { trustId: string; year: string };
 };
 
-export default function WorkbenchPage({ params: paramsProp }: WorkbenchPageProps) {
-  const params = React.use(paramsProp);
-  const [isClient, setIsClient] = React.useState(false);
-  React.useEffect(() => { setIsClient(true); }, []);
+export default function WorkbenchPage({ params }: WorkbenchPageProps) {
   
-  if (!isClient) {
-      return (
-        <div className="grid h-screen w-full lg:grid-cols-[25%_50%_25%]">
-            <div className="border-r"><RightPaneSkeleton/></div>
-            <div><CenterPaneSkeleton/></div>
-            <div className="border-l"><RightPaneSkeleton/></div>
-        </div>
-      );
-  }
-
   return (
     <div className="flex h-screen flex-col bg-background">
       <WorkbenchHeader trustId={params.trustId} year={params.year} />

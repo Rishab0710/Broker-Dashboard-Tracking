@@ -152,8 +152,8 @@ const LeftPane = () => (
                 <CardDescription className="text-xs">Real-time status of data ingestion feeds.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-                {sourceMonitors.map((monitor, i) => (
-                    <div key={i}>
+                {sourceMonitors.map((monitor) => (
+                    <div key={monitor.name}>
                         <div className="flex items-center justify-between">
                             <span className="font-semibold text-sm">{monitor.name}</span>
                             <span className="text-xs text-muted-foreground">{monitor.lastFile}</span>
