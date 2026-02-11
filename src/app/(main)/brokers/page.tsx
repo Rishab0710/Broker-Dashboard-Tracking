@@ -1456,8 +1456,8 @@ export default function BrokerTrackingPage() {
       <div className="flex min-h-screen flex-col bg-background">
         <main className="flex-1 overflow-y-auto">
             <div className="p-4 sm:p-6 border-b flex justify-between items-center">
-                <h1 className="text-lg font-semibold flex items-center gap-2">
-                  <Image src="https://cumberlandtrust.com/wp-content/uploads/2021/09/Cut_Logo_Final.svg" alt="Cumberland Trust Logo" width={140} height={20} />
+                <h1 className="text-xl font-semibold flex items-center gap-2">
+                  <Image src="https://cumberlandtrust.com/wp-content/uploads/2021/09/Cut_Logo_Final.svg" alt="Cumberland Trust Logo" width={210} height={30} />
                   <span className="border-l pl-2 ml-2 text-muted-foreground">Dashboard - Document Tracking</span>
                 </h1>
                 <div className="flex items-center gap-2">
@@ -1477,7 +1477,6 @@ export default function BrokerTrackingPage() {
                     <Select value={statusFilter} onValueChange={setStatusFilter}>
                         <SelectTrigger className="w-[140px] h-9 text-xs"><SelectValue placeholder="Filter by Status..." /></SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="all">All Statuses</SelectItem>
                             {Object.entries(statusDisplayNames).map(([key, value]) => (
                                 <SelectItem key={key} value={key}>{value}</SelectItem>
                             ))}
