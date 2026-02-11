@@ -1478,6 +1478,7 @@ export default function Page() {
                     <Select value={statusFilter} onValueChange={setStatusFilter}>
                         <SelectTrigger className="w-[140px] h-9 text-xs"><SelectValue placeholder="Filter by Status..." /></SelectTrigger>
                         <SelectContent>
+                            <SelectItem value="all">All Statuses</SelectItem>
                             {Object.entries(statusDisplayNames).map(([key, value]) => (
                                 <SelectItem key={key} value={key}>{value}</SelectItem>
                             ))}
