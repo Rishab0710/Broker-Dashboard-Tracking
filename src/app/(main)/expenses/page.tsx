@@ -103,8 +103,6 @@ const kpiData = {
   adjustmentImpact: -75_000,
 };
 
-let expensesData: any[] = [];
-
 // --- COMPONENTS ---
 
 const Header = () => {
@@ -277,7 +275,6 @@ export default function ExpensesPage() {
             { id: 'EXP-1005', trustName: 'Oak Ridge Investments', acctNo: '...5678', broker: 'Fidelity', expenseDate: '2024-03-28', postDate: '2024-03-29', category: 'Admin', amount: 300, taxMapping: 'Non-reportable', allocationMethod: 'Equal', allocatedAmt: 100, memo: 'State filing fee', exceptionTags: ['Unallocated'], status: 'FLAGGED' },
         ];
         setGridData(data);
-        expensesData = data; // Keep this for handleRowClick logic
     }, []);
 
     const getStatusConfig = (status: string) => {
@@ -293,7 +290,7 @@ export default function ExpensesPage() {
     const handleRowClick = (item: any) => {
         if(item.memo.startsWith('Amort.')) {
             const parentId = item.memo.match(/EXP-\d+/)?.[0];
-            const parentItem = expensesData.find(e => e.id === parentId);
+            const parentItem = gridData.find(e => e.id === parentId);
             setSelectedItem(parentItem || item);
         } else {
             setSelectedItem(item);
@@ -356,4 +353,3 @@ export default function ExpensesPage() {
         </TooltipProvider>
     );
 }
-

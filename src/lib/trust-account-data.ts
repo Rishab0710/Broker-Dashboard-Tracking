@@ -1,8 +1,4 @@
 
-
-
-
-
 type BrokerInfo = {
     name: string;
     has1099: boolean;
@@ -202,27 +198,27 @@ export const trustAccounts: TrustAccount[] = [
         const docStatuses: ('Pending' | 'Received' | 'Error' | 'Not Started')[] = ['Pending', 'Received', 'Error', 'Not Started'];
         const k1Statuses: ('Pending' | 'Received' | 'Not Started')[] = ['Pending', 'Received', 'Not Started'];
         const brokers = ['Fidelity', 'Charles Schwab', 'Morgan Stanley', 'JP Morgan', 'Vanguard', 'Carlyle Group', 'Blackstone'];
-        const hasK1 = Math.random() > 0.5;
+        const hasK1 = (i % 3) > 0;
 
         const status1099 = docStatuses[i % docStatuses.length];
         const statusK1 = hasK1 ? k1Statuses[i % k1Statuses.length] : 'Not Started';
 
         let processingTime: TrustAccount['processingTime'] = {};
         if (status1099 === 'Received') {
-            processingTime['1099'] = Math.floor(Math.random() * 10) + 1;
+            processingTime['1099'] = (i % 10) + 1;
         }
         if (statusK1 === 'Received') {
-            processingTime['k-1'] = Math.floor(Math.random() * 15) + 3;
+            processingTime['k-1'] = (i % 15) + 3;
         }
 
         const alerts: AuditFlag[] = [];
-        if (Math.random() > 0.8) {
+        if ((i % 5) === 0) {
             const flagDescriptions = ['Unmatched Distribution', 'Missing K-1 Estimate', 'Data Discrepancy'];
             alerts.push({
                 id: `FLAG${String(i + 5).padStart(3, '0')}`,
                 description: flagDescriptions[i % flagDescriptions.length],
                 date: `2024-03-${String((i % 28) + 1).padStart(2, '0')}`,
-                status: Math.random() > 0.5 ? 'Open' : 'Resolved',
+                status: (i % 2) === 0 ? 'Open' : 'Resolved',
             });
         }
 
@@ -238,16 +234,13 @@ export const trustAccounts: TrustAccount[] = [
             statusK1: statusK1,
             alerts: alerts,
             dateCreated: `2023-01-${String((i % 30) + 1).padStart(2, '0')}`,
-            accountStatus: Math.random() > 0.1 ? 'Active' : 'Inactive',
+            accountStatus: (i % 10) > 0 ? 'Active' : 'Inactive',
             trustType: trustTypes[i % trustTypes.length],
             brokers: [
                 { name: brokers[i % brokers.length], has1099: true, hasK1: hasK1 }
             ],
-            taxReturnStatus: Math.random() > 0.4 ? 'Filed' : 'Pending',
+            taxReturnStatus: (i % 2) > 0 ? 'Filed' : 'Pending',
             processingTime: processingTime,
         } as TrustAccount
     })
 ];
-    
-
-    
