@@ -522,9 +522,9 @@ const ChartsSection = ({ statements, errors }: { statements: Statement[], errors
         Normalize: { label: 'Normalize', color: 'hsl(var(--chart-3))' },
         QC: { label: 'QC', color: 'hsl(var(--chart-4))' },
         Output: { label: 'Output', color: 'hsl(var(--chart-5))' },
-        INFO: { label: 'Info', color: 'hsl(var(--chart-3))' },
+        INFO: { label: 'Info', color: 'hsl(var(--chart-1))' },
         WARN: { label: 'Warning', color: 'hsl(var(--chart-4))' },
-        ERROR: { label: 'Error', color: 'hsl(var(--chart-5))' },
+        ERROR: { label: 'Error', color: 'hsl(var(--chart-2))' },
         aging: { label: 'Errors', color: 'hsl(var(--chart-4))' },
     };
 
